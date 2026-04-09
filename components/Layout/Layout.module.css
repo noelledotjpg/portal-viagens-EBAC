@@ -1,0 +1,195 @@
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-page);
+}
+
+/* ── HEADER ── */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg-header);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.headerInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.logo:hover { opacity: 0.75; }
+
+.logoIcon {
+  font-size: 1.4rem;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.logoIconSVG {
+  display: inline-block;
+  transform: translateY(3.5px);
+  margin-right: 5px;
+}
+
+.logoIconSVG svg {
+  height: 20px;
+  width: 20px;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logoMain {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.12em;
+  transition: color 0.3s;
+}
+
+.logoSub {
+  font-size: 0.55rem;
+  font-weight: 400;
+  color: var(--gold);
+  letter-spacing: 0.3em;
+  margin-top: 1px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navLink {
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.navLink:hover { color: var(--text-primary); }
+
+/* ── THEME TOGGLE ── */
+.themeToggle {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  line-height: 1;
+}
+.themeToggle:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(200, 169, 110, 0.08);
+}
+
+.navCta {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--gold-on-gold);
+  background: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border-radius: 2px;
+  transition: background 0.2s, transform 0.15s;
+}
+.navCta:hover {
+  background: var(--gold-hover);
+  transform: translateY(-1px);
+}
+
+/* ── MAIN ── */
+.main { flex: 1; }
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--bg-page);
+  border-top: 1px solid var(--border-subtle);
+  padding: 3rem 0 2rem;
+  transition: background 0.3s ease;
+}
+
+.footerInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  text-align: center;
+}
+
+.footerBrand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.footerLogo {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.1rem;
+  color: var(--gold);
+  letter-spacing: 0.15em;
+}
+
+.footerTagline {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.footerLinks { display: flex; gap: 2rem; }
+
+.footerLink {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.footerLink:hover { color: var(--gold); }
+
+.footerCopy {
+  font-size: 0.7rem;
+  color: var(--text-faint);
+  margin: 0;
+  letter-spacing: 0.05em;
+}

@@ -1,0 +1,61 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* PAGE HEADER */
+.pageHeader {
+  padding: 6rem 0 4rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  background: linear-gradient(to bottom, rgba(200,169,110,0.04) 0%, transparent 100%);
+}
+
+.eyebrow {
+  display: block;
+  font-size: 0.68rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.pageTitle {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
+
+.pageDesc {
+  font-size: 0.95rem;
+  color: #777;
+  max-width: 520px;
+  line-height: 1.75;
+}
+
+.highlight {
+  color: var(--gold);
+}
+
+/* GRID */
+.section {
+  padding: 5rem 0 7rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .grid { grid-template-columns: 1fr; }
+  .pageTitle { font-size: 2.8rem; }
+}

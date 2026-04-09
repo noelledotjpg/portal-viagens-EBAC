@@ -1,0 +1,401 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  background: #080808;
+}
+
+/* Imagem de fundo */
+.heroBg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.45;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* No tema claro, a imagem fica mais visível */
+[data-theme="light"] .heroBg {
+  opacity: 1;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0,0,0,0.72) 0%,
+    rgba(0,0,0,0.45) 50%,
+    rgba(0,0,0,0.3) 100%
+  );
+  pointer-events: none;
+}
+
+/* No tema claro, overlay mais suave */
+[data-theme="light"] .heroOverlay {
+  background: linear-gradient(
+    135deg,
+    rgba(247,244,239,0.65) 0%,
+    rgba(247,244,239,0.35) 50%,
+    rgba(247,244,239,0.15) 100%
+  );
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  padding-top: 4rem;
+}
+
+.heroEyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.8s ease both;
+}
+
+.heroTitle {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(3.5rem, 8vw, 7.5rem);
+  font-weight: 800;
+  line-height: 1.0;
+  color: #f5f0e8;
+  margin-bottom: 1.8rem;
+  animation: fadeUp 0.8s ease 0.1s both;
+}
+
+[data-theme="light"] .heroTitle {
+  color: #1a1814;
+}
+
+.heroTitle em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.heroSub {
+  font-size: 1.05rem;
+  color: rgba(245,240,232,0.75);
+  max-width: 500px;
+  line-height: 1.75;
+  margin-bottom: 2.5rem;
+  animation: fadeUp 0.8s ease 0.2s both;
+}
+
+[data-theme="light"] .heroSub {
+  color: rgba(26,24,20, 1);
+}
+
+.heroActions {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  animation: fadeUp 0.8s ease 0.3s both;
+}
+
+.heroCta {
+  background: var(--gold);
+  color: var(--gold-on-gold);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  border-radius: 2px;
+  transition: background 0.2s, transform 0.2s;
+  display: inline-block;
+}
+.heroCta:hover {
+  background: var(--gold-hover);
+  transform: translateY(-2px);
+}
+
+.heroSecondary {
+  font-size: 0.82rem;
+  color: rgba(245,240,232, 1);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+[data-theme="light"] .heroSecondary { color: rgba(26,24,20, 1); }
+.heroSecondary:hover { color: var(--gold); }
+
+/* ── MANIFESTO ── */
+.manifesto {
+  padding: 8rem 0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-page);
+  transition: background 0.3s;
+}
+
+.manifestoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.sectionLabel {
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 1.2rem;
+}
+
+.manifestoTitle {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.manifestoText {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.85;
+  margin-bottom: 2.5rem;
+}
+
+.stats { display: flex; gap: 2.5rem; }
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.statNumber {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ── FEATURED ── */
+.featured {
+  padding: 7rem 0;
+  background: var(--bg-page);
+  transition: background 0.3s;
+}
+
+.sectionHeader { margin-bottom: 3rem; }
+
+.sectionTitle {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 0.5rem;
+}
+
+.featuredGrid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1rem;
+  height: 540px;
+}
+
+.featuredCard {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+}
+
+.featuredCardLarge { grid-row: 1 / 3; }
+
+.featuredImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+.featuredCard:hover .featuredImage { transform: scale(1.06); }
+
+.featuredOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
+}
+
+.featuredAccent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  opacity: 0.9;
+  transition: height 0.3s ease;
+}
+.featuredCard:hover .featuredAccent { height: 5px; }
+
+.featuredContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  z-index: 2;
+}
+
+.featuredPais {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.featuredNome {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #f5f0e8;
+  line-height: 1.1;
+  margin-bottom: 0.6rem;
+}
+
+.featuredDesc {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.6;
+  max-width: 380px;
+}
+
+.sectionFooter {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.verTodos {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  transition: gap 0.2s;
+}
+.verTodos:hover { gap: 14px; }
+
+/* ── CTA ── */
+.cta {
+  padding: 6rem 0 8rem;
+  background: var(--bg-page);
+  transition: background 0.3s;
+}
+
+.ctaBox {
+  position: relative;
+  border: 1px solid rgba(200, 169, 110, 0.2);
+  border-radius: 4px;
+  padding: 5rem 4rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.ctaDecor {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 300px;
+  background: radial-gradient(ellipse, rgba(200, 169, 110, 0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.ctaEyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.ctaTitle {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2.5rem;
+}
+
+.ctaButton {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--gold-on-gold);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 16px 40px;
+  border-radius: 2px;
+  transition: background 0.2s, transform 0.2s;
+}
+.ctaButton:hover {
+  background: var(--gold-hover);
+  transform: translateY(-2px);
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .manifestoGrid { grid-template-columns: 1fr; gap: 3rem; }
+  .featuredGrid { grid-template-columns: 1fr; height: auto; }
+  .featuredCardLarge { grid-row: auto; height: 360px; }
+  .featuredCard { height: 220px; }
+  .ctaBox { padding: 3rem 1.5rem; }
+}
+
+.ArrowIcon svg {
+  width: 16px;
+  transform: translateY(8px);
+}
